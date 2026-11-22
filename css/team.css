@@ -55,6 +55,7 @@
   color: #434455;
   margin-bottom: 8px;
 }
+
 /* Стили для иконок соцсетей в карточке команды */
 .team-social-list {
   display: flex;
@@ -97,9 +98,7 @@
   }
 
   .team-item {
-    width: calc(
-      (768px - 48px - 24px) / 2
-    ); /* или фиксированная ширина 264px под размер макета */
+    width: 264px;
   }
 }
 
@@ -115,6 +114,6 @@
   }
 
   .team-item {
-    width: calc((1158px - 48px - 72px) / 4);
+    width: 264px;
   }
 }

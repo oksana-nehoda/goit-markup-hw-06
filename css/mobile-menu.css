@@ -1,5 +1,7 @@
 /* Мобильное меню (базовая мобильная версия от 320px) */
-.menu-container {
+.menu-container,
+.js-menu-container,
+#mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,10 +10,25 @@
   background-color: #ffffff;
   z-index: 999;
   overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-container.is-open,
+.js-menu-container.is-open,
+#mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Внутренний контейнер: навигация сверху, контакты и соцсети внизу */
-.menu-container-inner {
+.menu-container-inner,
+.menu-container .container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -19,6 +36,8 @@
   height: 100%;
   padding-top: 72px;
   padding-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Кнопка закрытия в правом верхнем углу */
@@ -125,12 +144,16 @@
 }
 
 .mobile-social-icon {
+  width: 24px;
+  height: 24px;
   fill: #f4f4fd;
 }
 
 /* Скрываем полноэкранное мобильное меню на планшете и десктопе */
 @media screen and (min-width: 768px) {
-  .menu-container {
+  .menu-container,
+  .js-menu-container,
+  #mobile-menu {
     display: none;
   }
 }
