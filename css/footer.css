@@ -14,6 +14,10 @@
 
 /* 1. Блок логотипа и текста */
 .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   max-width: 264px;
 }
 
@@ -88,7 +92,7 @@
 .footer-subscribe {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрируем на мобилке */
+  align-items: center;
   width: 100%;
 }
 
@@ -103,10 +107,14 @@
 
 .footer-form {
   display: flex;
-  flex-direction: column; /* На мобилке поле и кнопка друг под другом */
+  flex-direction: column;
   gap: 16px;
   width: 100%;
   align-items: center;
+}
+
+.footer-label {
+  width: 100%;
 }
 
 .footer-input {
@@ -179,6 +187,10 @@
 
   .footer-subscribe {
     align-items: flex-start;
+    width: auto;
+  }
+
+  .footer-label {
     width: auto;
   }
 
